@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantumviz-cli"
+version = "1.0.0"
+description = "🔮 QuantumViz CLI - Interactive 3D Quantum State Visualizer with AI-Powered Simulations"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "QuantumViz Team", email = "quantum@example.com"}
+]
+keywords = [
+    "quantum", "visualization", "cli", "qutip", "simulation",
+    "bloch-sphere", "quantum-computing", "3d-graphics", "ai",
+    "github-copilot", "hackathon"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+
+dependencies = [
+    "typer[all]>=0.9.0",
+    "rich>=13.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.7.0",
+    "qutip>=5.0.0",
+    "pillow>=10.0.0",
+    "imageio>=2.31.0",
+    "torch>=2.0.0",
+    "github-copilot-sdk>=0.1.0",
+    "pydantic>=2.0.0",
+    "aiohttp>=3.8.0",
+    "gitpython>=3.1.0",
+    "tqdm>=4.65.0",
+    "colorama>=0.4.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "pre-commit>=3.0.0",
+]
+
+[project.scripts]
+quantumviz = "quantumviz.cli.main:app"
+qviz = "quantumviz.cli.main:app"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/quantumviz-cli"
+Documentation = "https://github.com/yourusername/quantumviz-cli#readme"
+Repository = "https://github.com/yourusername/quantumviz-cli"
+Issues = "https://github.com/yourusername/quantumviz-cli/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
